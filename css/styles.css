@@ -1,1 +1,125 @@
-/* dev styles go here */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.inner-container {
+    padding: 1rem;
+}
+
+
+/*** TYPEOGRAPHY ***/
+h2 {
+    color: tomato;
+    text-transform: uppercase;
+    font-size: 3.75rem;
+    font-weight: 200;
+}
+p {
+    margin-bottom: 1.5rem;
+}
+
+/*** HEADER ***/
+header {
+    background-color: black;
+}
+header svg {
+    fill: white;
+}
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+.menu a {
+    color: white;
+    text-transform: uppercase;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+}
+.menu a:hover,
+.menu a:active {
+    color: tomato;
+}
+.menu li {
+    line-height: 2.1875rem;
+    flex: 1 0 calc(50% - 0.5rem);
+}
+
+/*** FORM ***/
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+label {
+    text-transform: uppercase;
+    font-size: 1.875rem;
+    display: block;
+    /* makes all labels block level elements (instead of inline)
+        to force inline level elements to be shown below  */
+}
+form div {
+    margin-bottom: 1.5rem;
+}
+input,
+textarea {
+    width: 100%;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 3px #e8e8e8;
+    /* adds a dropshadow to the input field  */
+}
+textarea {
+    min-height: 18.75rem;
+    resize: vertical;
+    /* limits how the textarea field on the page can be resized 
+        width: does NOT work here */
+}
+input[type="checkbox"] {
+    /* this is an attibute selector. it selects anything on the 
+        HTML page which has a type of checkbox (other types can be used) */
+    width: 1.5rem;
+    height: 1.5rem;
+}
+label[for="privacy"] {
+    font-size: 1rem;
+}
+input[type="submit"] {
+    text-transform: uppercase;
+    font-size: 1.875rem;
+    width: unset;
+    background-color: white;
+    border: none;
+    box-shadow: none;
+    font-weight: bold;
+    transition: padding-left 1s ease;
+    /* transition to make it move to the hover/active state  */
+}
+input[type="submit"]:hover {
+    cursor: pointer;
+    padding-left: 1.5rem;
+    /* what it should look like when active  */
+}
+
+
+/*** MEDIA QUERIES ***/
+@media screen and (min-width: 1225px) {
+    .inner-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    }
+    .menu li {
+        flex: 1 0 calc(25% - 0.5rem)
+    }
+    fieldset {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 3rem;
+    }
+    fieldset div {
+        flex: 0 0 calc(50% - 3rem);
+    }
+
+}
+
